@@ -80,4 +80,20 @@ let htmlBody = `<!DOCTYPE html>
 ...         ${message}
 ...     </body>
 ... </html>`;
-console.log(html);
+console.log(htmlBody);
+
+console.log('------------');
+
+console.log('ABC\nEFG');
+console.log('ABC\\nEFG');
+console.log(`ABC\nEFG`);
+console.log(`ABC\\nEFG`);
+console.log(String.raw`ABC\nEFG`);
+
+console.log('-------------');
+
+function f(strings) {
+    console.log(strings);
+    console.log(strings.raw);
+}
+f`ABC\nEFG`;

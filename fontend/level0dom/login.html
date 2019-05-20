@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form name="login">
+        User: <input type="text" name="user" value="guest">
+        Password: <input type="password" name="passwd" value="guest">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        // 取得name為login的表單方式
+        // document.forms[0];
+        // document.forms['login'];
+        // document.forms.login;
+        
+        // 取得name為user的輸入文字框方式
+        // document.forms['login'].elements[0];
+        // document.forms['login'].elements['user'];
+        // document.forms['login'].elements.user;
+        
+        // 取得login表單的user欄位
+        // document.login.user
+
+        // 取得欄位值
+        // document.login.user.value
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input name="user" value="guest">
+    <img id="logo", src="logo.jpg"
+        class="logo", title="logo">
+
+    <script>
+        let input = document.getElementsByTagName('user')[0];
+        console.log(input)
+        let {name, value} = input;
+        let className = document.getElementById('logo').className;
+
+        let attributes = document.getElementById('logo').attributes;
+        Array.from(attributes).forEach(attr => {
+            let {nodeName, nodeValue} = attr;
+            console.log(`${nodeName}:${nodeValue}`);
+        });
+    </script>
+</body>
+</html>

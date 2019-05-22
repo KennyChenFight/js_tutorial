@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    容器一:
+    <div id="container1">
+        <img id="image" src="https://openhome.cc/Gossip/images/caterpillar_small.jpg">
+    </div>
+    容器二:
+    <div id="container2"></div>
+
+    <script>
+        document.getElementById('image').onclick = function() {
+            let container1 = document.getElementById('container1');
+            let container2 = document.getElementById('container2');
+            if (this.parentNode == container1) {
+                container2.appendChild(this);
+            }
+            else {
+                container1.appendChild(this);
+            }
+        };
+    </script>
+</body>
+</html>

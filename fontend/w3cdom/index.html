@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首頁</title>
+</head>
+<body>
+    <h1>Hello!World!</h1>
+    <a href="https://openhome.cc/Gossip/">學習筆記</a>
+    <div id="console"></div>
+
+    <script>
+        let typeNames = new Map([
+            [Node.ELEMENT_NODE, 'ELEMENT_NODE'],
+            [Node.ATTRIBUTE_NODE, 'ATTRIBUTE_NODE'],
+            [Node.TEXT_NODE, 'TEXT_NODE'],
+            [Node.CDATA_SECTION_NODE, 'CDATA_SECTION_NODE'],
+            [Node.ENTITY_REFERENCE_NODE, 'ENTITY_REFERENCE_NODE'],
+            [Node.ENTITY_NODE, 'ENTITY_NODE'],
+            [Node.PROCESSING_INSTRUCTION_NODE, 'PROCESSING_INSTRUCTION_NODE'],
+            [Node.COMMENT_NODE, 'COMMENT_NODE'],
+            [Node.DOCUMENT_NODE, 'DOCUMENT_NODE'],
+            [Node.DOCUMENT_TYPE_NODE, 'DOCUMENT_TYPE_NODE'],
+            [Node.DOCUMENT_FRAGMENT_NODE, 'DOCUMENT_FRAGMENT_NODE'],
+            [Node.NOTATION_NODE, 'NOTATION_NODE']
+        ]);
+
+        function subNodesOf(parent, indent = '　　') {
+            let nodes = parent.childNodes;
+            let nodeDesc = Array.from(nodes).reduce((nodeDesc, node) => {
+                let nodeName = node.nodeName;
+                let typeName = typeNames.get(node.nodeType);
+                return nodeDesc + `${indent} ${nodeName} ${typeName} <br>` + 
+                        subNodesOf(node, `　　${indent}`);
+            }, '');
+            
+            return nodeDesc;
+        }
+
+        let nodeName = document.nodeName;
+        let typeName = typeNames.get(document.nodeType);
+        document.getElementById('console').innerHTML = 
+            `${nodeName} ${typeName} <br>` + subNodesOf(document);
+    </script>
+</body>
+</html>

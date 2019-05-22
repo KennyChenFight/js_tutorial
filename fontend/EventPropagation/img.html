@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input id="src" type="text"><button id="add">新增圖片</button>
+    <div id="images"></div>
+
+    <script>
+        let images = document.getElementById('images');
+        images.onclick = function (event) {  
+            this.removeChild(event.target);
+        };
+        document.getElementById('add').onclick = function() {
+            let img = document.createElement('img');
+            img.src = document.getElementById('src').value;
+            images.appendChild(img);
+        };
+    </script>
+</body>
+</html>

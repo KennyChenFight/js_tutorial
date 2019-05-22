@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function handle(elem) {
+            document.getElementById('console').innerHTML
+                = `Who's clicked: ${elem.id}`;
+        }
+    </script>
+</head>
+<body>
+    <button id="btn1" onclick="handle(this);">按鈕一</button>
+    <button id="btn2" onclick="handle(this);">按鈕二</button>
+    <div id="console"></div>
+</body>
+</html>
